@@ -84,7 +84,7 @@ alderman_committees = {'hairston, leslie' : (14216,),
                        }
                        
 
-f = open('/home/fgregg/academic/politics/aldermanic_contributions.csv', 'w')
+f = open('../aldermanic_contributions.csv', 'w')
 f.write("CommitteeID,LastOnlyName,FirstName,RcvDate,Amount,LoanAmount,Occupation,Employer,Address1,Address2,City,State,Zip,RctType,Description,VendorLastOnlyName,VendorFirstName,VendorAddress1,VendorAddress2,VendorCity,VendorState,VendorZip,RptType,ElectionType,ElectionYear,RptPdBegDate,RptPdEndDate,RptRcvdDate,CmteReferName,CmteName,StateCmte,StateID,LocalCmte,LocalID\n")
 f.close
                       
@@ -110,7 +110,7 @@ for alderman in alderman_committees.keys() :
         contributions = StringIO.StringIO(contributions)
         tabin = csv.reader(contributions, dialect=csv.excel_tab)
 
-        f = open('/home/fgregg/academic/politics/aldermanic_contributions.csv', 'a')
+        f = open('../aldermanic_contributions.csv', 'a')
         writer = csv.writer(f, dialect=csv.excel)
         for row in tabin :
             writer.writerow(row)
